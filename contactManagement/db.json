@@ -1,0 +1,29 @@
+{
+  "register": [],
+  "users": [
+    {
+      "email": "kunaly@gmail.com",
+      "password": "$2a$10$kUNV0Gvqfv8PlO25I3FhCe/CtSxIrMYBcEoz3gec9BEjJxKY/1gsK",
+      "firstName": "kunal",
+      "lastName": "Yadav",
+      "admin": true,
+      "id": 3
+    },
+    {
+      "email": "test32@gmail.com",
+      "firstName": "32ewr1221",
+      "lastName": "23r23r1",
+      "password": "$2a$10$ZYT1HWQ1D1Z0jzCrxO2BUePuJqoOBF4bXhu9Lr0awx/0.g6DFZU8a",
+      "admin": false,
+      "id": 4
+    },
+    {
+      "email": "user@gmail.com",
+      "firstName": "user1",
+      "lastName": "name",
+      "password": "$2a$10$Dncy907EWz0B.KdAITcqJuh.rTUVa/1Fvuwlv4iva8Wsh/v4Uc9p6",
+      "admin": false,
+      "id": 5
+    }
+  ]
+}

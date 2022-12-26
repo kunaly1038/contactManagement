@@ -1,0 +1,9 @@
+<app-header></app-header>
+    <mat-card class="example-card"  *ngIf="displayData">
+        <mat-card-title>{{displayData.firstName + " "+ displayData.lastName }} </mat-card-title>
+        <mat-card-subtitle>{{displayData.email}}</mat-card-subtitle>
+        <mat-card-actions align="end">
+            <button type="button" mat-raised-button color="accent" [routerLink]="['/user/edit/', displayData.id]">Edit</button>
+            <button type="button" mat-raised-button color="accent" routerLink="/user/landingPage">Landing Page</button>
+        </mat-card-actions>
+    </mat-card>

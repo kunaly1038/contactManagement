@@ -1,0 +1,62 @@
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { IUser } from '../../models/IUser';
+import { UserService } from '../../services/user.service';
+
+@Component({
+  selector: 'app-edit-contact',
+  templateUrl: './edit-contact.component.html',
+  styleUrls: ['./edit-contact.component.scss'],
+})
+export class EditContactComponent implements OnInit {
+  user!: any[];
+  userFA!: FormArray;
+  editUserDetails!: FormGroup;
+
+  constructor(private _userService: UserService, private _fb: FormBuilder) {
+    this.initFG();
+  }
+
+  ngOnInit(): void {
+    this.getUserDetails();
+    this.printDetails();
+  }
+
+  initFG() {
+    this.userFA = this._fb.array([]);
+  }
+
+  getUserDetails() {
+    this._userService
+      .getAllUsers()
+      .subscribe((res) => this._userService.userResponse.next(res));
+  }
+
+  addFormsAndPopulateData(data: any[]) {
+    data.forEach((item, index) => {
+      this.userFA.controls.push(this.getUserForm());
+      this.userFA.controls[index].patchValue(item);
+    });
+  }
+
+  printDetails() {
+    this._userService.userResponse.subscribe((res) => {
+      if (res) {
+        this.user = res;
+        this.addFormsAndPopulateData(this.user);
+      }
+    });
+  }
+
+  getUserForm(): FormGroup {
+    return this._fb.group({
+      firstname: [''],
+      lastname: [''],
+      email: [''],
+    });
+  }
+
+  get userFormArray(): FormArray {
+    return this.userFA as FormArray;
+  }
+}

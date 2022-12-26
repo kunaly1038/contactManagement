@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+    <form [formGroup]="registerUserDetails">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Enter email" formControlName="email" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Enter password" formControlName="password"/>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput placeholder="Enter Frist Name" formControlName="firstName"/>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput placeholder="Enter Last Name" formControlName="lastName"/>
+        </mat-form-field>
+        <!-- <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+          </mat-radio-group> -->
+        <mat-card-actions>
+            <button  type="button" mat-raised-button color="accent" (click)="registerUser()">Save User</button>
+            <button type="button" mat-raised-button color="accent" routerLink="/auth/login">Login</button>
+        </mat-card-actions>
+    </form>
+</mat-card>
+<router-outlet></router-outlet>

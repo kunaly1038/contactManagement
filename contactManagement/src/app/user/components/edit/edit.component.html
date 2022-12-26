@@ -1,0 +1,20 @@
+<mat-card class="example-card">
+            <form [formGroup]="editUserDetails">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput placeholder="Enter email" [disabled]="true" formControlName="email" />
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input type="text" matInput placeholder="Enter First Name" formControlName="firstName" />
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Second Name</mat-label>
+                    <input type="text" matInput placeholder="Enter Second Name" formControlName="lastName" />
+                </mat-form-field>
+                <mat-card-actions>
+                    <button type="button" mat-raised-button color="accent" (click)="saveDetails()">Save</button>
+                    <button type="button" mat-raised-button color="accent" routerLink="/user/landingPage">Cancel</button>
+                </mat-card-actions>
+            </form>
+</mat-card>
